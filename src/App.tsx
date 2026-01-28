@@ -12,7 +12,6 @@ import {
 import { useLocation, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ContactForm from './components/ContactForm';
-import '@fontsource/opendyslexic';
 import { Link } from 'react-router-dom';
 import FreeResources from './pages/FreeResources';
 import SixthStop from './pages/SixthStop';
