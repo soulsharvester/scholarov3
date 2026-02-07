@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Check if your branch is named 'main' or 'master'
+    branches: ["dev"] # Check if your branch is named 'main' or 'master'
 
 permissions:
   contents: read
