@@ -5,7 +5,7 @@ export const resources = [
     description: "A comprehensive GCSE Language Paper 1 guide tailored to ESL students",
     image: "/scholarov3/english-language.jpeg",
     author: "Kabeer",
-    link: "#"
+    link: "/free-resources"
   },
 
   {
@@ -14,7 +14,7 @@ export const resources = [
     description: "An extensive yet easy-to-understand guide for GCSE Biology, designed for ESL students",
     image: "/scholarov3/biology.jpg",
     author: "Hamza",
-    link: "#"
+    link: "/free-resources"
   },
   // Add more resources as needed...
 ];
