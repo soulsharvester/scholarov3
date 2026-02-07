@@ -16,46 +16,46 @@ const SUBJECTS = ['English', 'Maths', 'Biology', 'Chemistry', 'Physics', 'Religi
 
 const TOPIC_PLACEHOLDERS: Record<string, Topic[]> = {
   'English Language': [
-    { name: 'Paper 1', pdf: '/englan1.pdf' },
-    { name: 'Paper 2', pdf: '/englan2.pdf' }, // Your specific file
+    { name: 'Paper 1', pdf: '/scholarov3/englan1.pdf' },
+    { name: 'Paper 2', pdf: '/scholarov3/englan2.pdf' }, // Your specific file
   ],
   'English Literature': [
-    { name: 'Shakespeare', pdf: '/temp.pdf' },
-    { name: '19th Century Novel', pdf: '/temp.pdf' },
-    { name: 'Poetry Anthology', pdf: '/temp.pdf' },
+    { name: 'Shakespeare', pdf: '/scholarov3/temp.pdf' },
+    { name: '19th Century Novel', pdf: '/scholarov3/temp.pdf' },
+    { name: 'Poetry Anthology', pdf: '/scholarov3/temp.pdf' },
   ],
   'Maths': [
-    { name: 'Numbers', pdf: '/math1.pdf' },
-    { name: 'Algebra', pdf: '/math2.pdf' },
-    { name: 'Geometry', pdf: '/math3.pdf' },
-    { name: 'Trigonometry', pdf: '/math4.pdf' },
-    { name: 'Probability', pdf: '/math5.pdf' },
+    { name: 'Numbers', pdf: '/scholarov3/math1.pdf' },
+    { name: 'Algebra', pdf: '/scholarov3/math2.pdf' },
+    { name: 'Geometry', pdf: '/scholarov3/math3.pdf' },
+    { name: 'Trigonometry', pdf: '/scholarov3/math4.pdf' },
+    { name: 'Probability', pdf: '/scholarov3/math5.pdf' },
   ],
   'Biology': [
-    { name: 'Cell Biology', pdf: '/biocel.pdf' },
-    { name: 'Organisation', pdf: '/bioorg.pdf' },
-    { name: 'Infection and Response', pdf: '/bioinf.pdf' },
-    { name: 'Bioenergetics', pdf: '/biobio.pdf' }, // Your specific file
-    { name: 'Homeostasis', pdf: '/temp.pdf' },
-    { name: 'Ecology', pdf: '/temp.pdf' },
+    { name: 'Cell Biology', pdf: '/scholarov3/biocel.pdf' },
+    { name: 'Organisation', pdf: '/scholarov3/bioorg.pdf' },
+    { name: 'Infection and Response', pdf: '/scholarov3/bioinf.pdf' },
+    { name: 'Bioenergetics', pdf: '/scholarov3/biobio.pdf' }, // Your specific file
+    { name: 'Homeostasis', pdf: '/scholarov3/temp.pdf' },
+    { name: 'Ecology', pdf: '/scholarov3/temp.pdf' },
   ],
   'Chemistry': [
-    { name: 'Atomic Structure', pdf: '/chem1.pdf' },
-    { name: 'Organic Chemistry', pdf: '/chem2.pdf' },
-    { name: 'Chemical Analysis', pdf: '/chem3.pdf' },
-    { name: 'Earths Resources', pdf: '/chem4.pdf' },
+    { name: 'Atomic Structure', pdf: '/scholarov3/chem1.pdf' },
+    { name: 'Organic Chemistry', pdf: '/scholarov3/chem2.pdf' },
+    { name: 'Chemical Analysis', pdf: '/scholarov3/chem3.pdf' },
+    { name: 'Earths Resources', pdf: '/scholarov3/chem4.pdf' },
   ],
   'Physics': [
-    { name: 'Energy', pdf: '/phys1.pdf' },
-    { name: 'Electricity', pdf: '/phys2.pdf' },
-    { name: 'Particle Model', pdf: '/phys3.pdf' },
-    { name: 'Forces', pdf: '/phys4.pdf' },
-    { name: 'Waves', pdf: '/phys5.pdf' },
-    { name: 'Magnetism and Electromagnetism', pdf: '/phys6.pdf' },
+    { name: 'Energy', pdf: '/scholarov3/phys1.pdf' },
+    { name: 'Electricity', pdf: '/scholarov3/phys2.pdf' },
+    { name: 'Particle Model', pdf: '/scholarov3/phys3.pdf' },
+    { name: 'Forces', pdf: '/scholarov3/phys4.pdf' },
+    { name: 'Waves', pdf: '/scholarov3/phys5.pdf' },
+    { name: 'Magnetism and Electromagnetism', pdf: '/scholarov3/phys6.pdf' },
   ],
   'Religious Studies': [
-    { name: 'Christianity', pdf: '/rs1.pdf' },
-    { name: 'Islam', pdf: '/rs2.pdf' },
+    { name: 'Christianity', pdf: '/scholarov3/rs1.pdf' },
+    { name: 'Islam', pdf: '/scholarov3/rs2.pdf' },
   ],
 };
 
@@ -178,12 +178,12 @@ export default function FreeResources() {
             <span className="font-medium dark:text-white">{topic.name}</span>
             
             {/* Standard HTML anchor tag styled as a button */}
-            <a 
-              href={`${import.meta.env.BASE_URL}${topic.pdf.replace(/^\//, '')}`} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="px-4 py-2 bg-cornflower-blue text-white rounded-md text-sm hover:bg-blue-600 transition-colors"
-      >
+            <a
+              href={topic.pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-cornflower-blue text-white rounded-md text-sm hover:bg-blue-600 transition-colors"
+            >
               View PDF
             </a>
           </div>
