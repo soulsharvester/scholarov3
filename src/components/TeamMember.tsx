@@ -10,17 +10,17 @@ export const teamMembers: TeamMemberType[] = [
   {
     name: 'Kabeer',
     img: '/scholaro/kabeer.jpeg',
-    description: 'Founder & CEO',
+    description: 'Founder & CEO and English Resource Creator',
   },
   {
     name: 'Raj',
     img: '/scholaro/raj.jpeg',
-    description: 'Co-Founder',
+    description: 'Co-Founder and Maths Resource Creator',
   },
   {
     name: 'Elliot',
     img: '#',
-    description: 'Programmer',
+    description: 'Programmer and Physics Resource Creator',
   },
   {
     name: 'Shane',
@@ -30,7 +30,7 @@ export const teamMembers: TeamMemberType[] = [
   {
     name: 'Salahuddin',
     img: '#',
-    description: 'Cameraman',
+    description: 'Chemistry Resource Creator and Cameraman',
   },
   {
     name: 'Hamza',
@@ -49,14 +49,20 @@ export const teamMembers: TeamMemberType[] = [
   },
   {
     name: 'Farhiya',
-    img: '/scholaro/farhiya.jpeg',
+    img: '#',
     description: 'English and RE Resource Creator',
   },
   {
-    name: 'Rohail',
+    name: 'Sareena',
     img: '#',
-    description: 'Resource Creator',
+    description: 'English Resource Creator',
   },
+  {
+    name: 'Anas',
+    img: '#',
+    description: 'Maths Resource Creator',
+  },
+  
   
 ];
 

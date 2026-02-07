@@ -25,7 +25,7 @@ export default function NavBar() {
 
   const navLinks = [
     { to: '/team', label: 'Team' },
-    { to: '/free-resources', label: 'Free Resources' },
+    { to: '/free-resources', label: 'Resources' },
     { to: '/sixth-stop', label: 'Sixth Stop' },
     { to: '/opportunities', label: 'Opportunities' },
   ];

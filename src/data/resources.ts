@@ -7,16 +7,9 @@ export const resources = [
     author: "Kabeer",
     link: "#"
   },
+
   {
     id: 2,
-    title: "ESL GCSE English Language Full Guide",
-    description: "A comprehensive GCSE Language Paper 2 guide tailored to ESL students",
-    image: "/scholaro/english-language.jpeg",
-    author: "Gavin",
-    link: "#"
-  },
-  {
-    id: 3,
     title: "ESL GCSE Biology Full Guide",
     description: "An extensive yet easy-to-understand guide for GCSE Biology, designed for ESL students",
     image: "/scholaro/biology.jpg",
