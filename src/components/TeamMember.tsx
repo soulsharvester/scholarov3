@@ -9,12 +9,12 @@ export type TeamMemberType = {
 export const teamMembers: TeamMemberType[] = [
   {
     name: 'Kabeer',
-    img: '/scholarov3/kabeer.jpeg',
+    img: '/kabeer.jpeg',
     description: 'Founder & CEO and English Resource Creator',
   },
   {
     name: 'Raj',
-    img: '/scholarov3/raj.jpeg',
+    img: '/raj.jpeg',
     description: 'Co-Founder and Maths Resource Creator',
   },
   {
@@ -34,17 +34,17 @@ export const teamMembers: TeamMemberType[] = [
   },
   {
     name: 'Hamza',
-    img: '/scholarov3/hamza.jpg',
+    img: '/hamza.jpg',
     description: 'Biology Resource Creator',
   },
   {
     name: 'Daniel',
-    img: '/scholarov3/daniel.jpeg',
+    img: '/daniel.jpeg',
     description: 'Outreach Coordinator',
   },
   {
     name: 'Juwon',
-    img: '/scholarov3/juwon.jpeg',
+    img: '/juwon.jpeg',
     description: 'Content Creator',
   },
   {
@@ -69,7 +69,7 @@ export const teamMembers: TeamMemberType[] = [
 export const TEAM_MEMBER_NAMES = teamMembers.map(member => member.name);
 
 export function TeamMember({ name, img, description }: TeamMemberType) {
-  const PLACEHOLDER_IMG = '/scholarov3/placeholder-profile.png'; // Make sure this image exists in your public folder
+  const PLACEHOLDER_IMG = '/placeholder-profile.png'; // Make sure this image exists in your public folder
   const imageSrc = img && img !== '#' ? img : PLACEHOLDER_IMG;
   return (
     <div className="text-center">
