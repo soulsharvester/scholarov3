@@ -62,6 +62,26 @@ export const teamMembers: TeamMemberType[] = [
     img: '#',
     description: 'Maths Resource Creator',
   },
+  {
+    name: 'Lamis',
+    img: '#',
+    description: 'Londons Ambassador and Resource Creator',
+  },
+  {
+    name: 'Ashton',
+    img: '#',
+    description: 'Newcastle city Ambassador',
+  },
+  {
+    name: 'Tina',
+    img: '#',
+    description: 'Bradford city Ambassador',
+  },
+  {
+    name: 'Olivia',
+    img: '#',
+    description: 'Cardiff Ambassador',
+  },
   
   
 ];
