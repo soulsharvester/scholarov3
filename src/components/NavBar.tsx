@@ -43,7 +43,7 @@ export default function NavBar() {
             navigate('/');
           }
         }}>
-          <img src="/scholarov3/logo.png" alt="Scholaro Logo" className="w-10 h-10 object-contain" />
+          <img src="/logo.png" alt="Scholaro Logo" className="w-10 h-10 object-contain" />
           <span className={`font-bold text-2xl transition-colors duration-200 ${
             location.pathname === '/' ? 'text-cornflower-blue' : 'text-gray-800 dark:text-white'
           }`}>

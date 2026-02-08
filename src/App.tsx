@@ -29,7 +29,7 @@ function LoadingScreen() {
       className="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex items-center justify-center pointer-events-none"
     >
       <motion.img
-        src="/scholarov3/logo.png"
+        src="/logo.png"
         alt="Scholaro Logo"
         initial={{ scale: 0.2, opacity: 1 }}
         animate={{ scale: 2, opacity: 0 }}
