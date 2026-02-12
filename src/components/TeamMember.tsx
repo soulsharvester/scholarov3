@@ -35,7 +35,7 @@ export const teamMembers: TeamMemberType[] = [
   {
     name: 'Hamza',
     img: '/hamza.jpg',
-    description: 'Biology Resource Creator',
+    description: 'Lead Programmer and Biology Resource Creator',
   },
   {
     name: 'Daniel',
