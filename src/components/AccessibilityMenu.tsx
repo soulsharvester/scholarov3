@@ -38,7 +38,7 @@ export default function AccessibilityMenu({ isOpen, onClose }: AccessibilityMenu
             <button
               onClick={() => setFontSize(prev => Math.min(24, prev + 2))}
               className="p-2 bg-gray-100 dark:bg-gray-700 rounded text-gray-700 dark:text-white"
-            >
+            > 
               <Type className="w-4 h-4" />+
             </button>
           </div>

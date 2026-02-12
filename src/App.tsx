@@ -12,9 +12,8 @@ import {
 import { useLocation, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ContactForm from './components/ContactForm';
-import '@fontsource/opendyslexic';
 import { Link } from 'react-router-dom';
-import FreeResources from './pages/FreeResources';
+import FreeResources from './pages/Resources';
 import SixthStop from './pages/SixthStop';
 import Opportunities from './pages/Opportunities';
 import Team from './pages/Team';
@@ -30,7 +29,7 @@ function LoadingScreen() {
       className="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex items-center justify-center pointer-events-none"
     >
       <motion.img
-        src="/scholaro/logo.png"
+        src="/logo.png"
         alt="Scholaro Logo"
         initial={{ scale: 0.2, opacity: 1 }}
         animate={{ scale: 2, opacity: 0 }}

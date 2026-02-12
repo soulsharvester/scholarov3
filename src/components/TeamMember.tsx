@@ -9,23 +9,18 @@ export type TeamMemberType = {
 export const teamMembers: TeamMemberType[] = [
   {
     name: 'Kabeer',
-    img: '/scholaro/kabeer.jpeg',
-    description: 'Founder & CEO',
+    img: '/kabeer.jpeg',
+    description: 'Founder & CEO and English Resource Creator',
   },
   {
     name: 'Raj',
-    img: '/scholaro/raj.jpeg',
-    description: 'Co-Founder',
+    img: '/raj.jpeg',
+    description: 'Co-Founder and Maths Resource Creator',
   },
   {
     name: 'Elliot',
     img: '#',
-    description: 'Programmer',
-  },
-  {
-    name: 'Gavin',
-    img: '/scholaro/gavin.jpeg',
-    description: 'Programmer',
+    description: 'Programmer and Physics Resource Creator',
   },
   {
     name: 'Shane',
@@ -35,40 +30,66 @@ export const teamMembers: TeamMemberType[] = [
   {
     name: 'Salahuddin',
     img: '#',
-    description: 'Cameraman',
+    description: 'Chemistry Resource Creator and Cameraman',
   },
   {
     name: 'Hamza',
-    img: '/scholaro/hamza.jpg',
+    img: '/hamza.jpg',
     description: 'Biology Resource Creator',
   },
   {
     name: 'Daniel',
-    img: 'daniel.jpeg',
+    img: '/daniel.jpeg',
     description: 'Outreach Coordinator',
   },
   {
     name: 'Juwon',
-    img: '/scholaro/juwon.jpeg',
+    img: '/juwon.jpeg',
     description: 'Content Creator',
   },
   {
     name: 'Farhiya',
-    img: '/scholaro/farhiya.jpeg',
+    img: '#',
     description: 'English and RE Resource Creator',
   },
   {
-    name: 'Rohail',
+    name: 'Sareena',
     img: '#',
-    description: 'Resource Creator',
+    description: 'English Resource Creator',
   },
+  {
+    name: 'Anas',
+    img: '#',
+    description: 'Maths Resource Creator',
+  },
+  {
+    name: 'Lamis',
+    img: '#',
+    description: 'Londons Ambassador and Resource Creator',
+  },
+  {
+    name: 'Ashton',
+    img: '#',
+    description: 'Newcastle city Ambassador',
+  },
+  {
+    name: 'Tina',
+    img: '#',
+    description: 'Bradford city Ambassador',
+  },
+  {
+    name: 'Olivia',
+    img: '#',
+    description: 'Cardiff Ambassador',
+  },
+  
   
 ];
 
 export const TEAM_MEMBER_NAMES = teamMembers.map(member => member.name);
 
 export function TeamMember({ name, img, description }: TeamMemberType) {
-  const PLACEHOLDER_IMG = '/scholaro/placeholder-profile.png'; // Make sure this image exists in your public folder
+  const PLACEHOLDER_IMG = '/placeholder-profile.png'; // Make sure this image exists in your public folder
   const imageSrc = img && img !== '#' ? img : PLACEHOLDER_IMG;
   return (
     <div className="text-center">

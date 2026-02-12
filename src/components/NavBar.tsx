@@ -25,7 +25,7 @@ export default function NavBar() {
 
   const navLinks = [
     { to: '/team', label: 'Team' },
-    { to: '/free-resources', label: 'Free Resources' },
+    { to: '/free-resources', label: 'Resources' },
     { to: '/sixth-stop', label: 'Sixth Stop' },
     { to: '/opportunities', label: 'Opportunities' },
   ];
@@ -43,7 +43,7 @@ export default function NavBar() {
             navigate('/');
           }
         }}>
-          <img src="/scholaro/logo.png" alt="Scholaro Logo" className="w-10 h-10 object-contain" />
+          <img src="/logo.png" alt="Scholaro Logo" className="w-10 h-10 object-contain" />
           <span className={`font-bold text-2xl transition-colors duration-200 ${
             location.pathname === '/' ? 'text-cornflower-blue' : 'text-gray-800 dark:text-white'
           }`}>

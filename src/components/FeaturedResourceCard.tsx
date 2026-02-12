@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 type FeaturedResourceCardProps = {
   title: string;
@@ -10,10 +11,8 @@ type FeaturedResourceCardProps = {
 
 export default function FeaturedResourceCard({ title, description, image, author, link }: FeaturedResourceCardProps) {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to={link}
       className="group block rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
     >
       <div className="relative h-48 overflow-hidden">
@@ -33,6 +32,6 @@ export default function FeaturedResourceCard({ title, description, image, author
         <p className="text-gray-700 dark:text-gray-300 mb-2">{description}</p>
         <p className="text-sm text-gray-500 dark:text-gray-400">By {author}</p>
       </div>
-    </a>
+    </Link>
   );
 }

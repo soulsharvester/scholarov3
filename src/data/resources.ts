@@ -3,25 +3,18 @@ export const resources = [
     id: 1,
     title: "ESL GCSE English Language Full Guide",
     description: "A comprehensive GCSE Language Paper 1 guide tailored to ESL students",
-    image: "/scholaro/english-language.jpeg",
+    image: "/english-language.jpeg",
     author: "Kabeer",
-    link: "#"
+    link: "/free-resources"
   },
+
   {
     id: 2,
-    title: "ESL GCSE English Language Full Guide",
-    description: "A comprehensive GCSE Language Paper 2 guide tailored to ESL students",
-    image: "/scholaro/english-language.jpeg",
-    author: "Gavin",
-    link: "#"
-  },
-  {
-    id: 3,
     title: "ESL GCSE Biology Full Guide",
     description: "An extensive yet easy-to-understand guide for GCSE Biology, designed for ESL students",
-    image: "/scholaro/biology.jpg",
+    image: "/biology.jpg",
     author: "Hamza",
-    link: "#"
+    link: "/free-resources"
   },
   // Add more resources as needed...
 ];
