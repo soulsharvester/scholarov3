@@ -11,12 +11,12 @@ import {
 } from 'lucide-react';
 import { useLocation, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import ContactForm from './components/ContactForm';
 import { Link } from 'react-router-dom';
 import FreeResources from './pages/Resources';
 import SixthStop from './pages/SixthStop';
 import Opportunities from './pages/Opportunities';
 import Team from './pages/Team';
+import Unavailable from './pages/Unavailable';
 import { resources } from './data/resources';
 import FeaturedResourceCard from './components/FeaturedResourceCard';
 
@@ -29,7 +29,7 @@ function LoadingScreen() {
       className="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex items-center justify-center pointer-events-none"
     >
       <motion.img
-        src="/logo.png"
+        src={`${import.meta.env.BASE_URL}logo.png`}
         alt="Scholaro Logo"
         initial={{ scale: 0.2, opacity: 1 }}
         animate={{ scale: 2, opacity: 0 }}
@@ -193,6 +193,20 @@ function App() {
               <section className="py-20 px-4 bg-white dark:bg-gray-900">
                 <div className="max-w-6xl mx-auto">
                   <h2 className="text-4xl font-bold mb-12 text-center dark:text-white">Featured Resources</h2>
+
+                  <div className="mb-16 flex justify-center">
+                    <div className="w-full max-w-4xl aspect-[16/9] overflow-hidden rounded-3xl shadow-xl">
+                      <iframe
+                        className="w-full h-full"
+                        src="https://www.youtube.com/embed/B-IC006a10w"
+                        title="Scholaro Introduction"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {featuredResources.map(resource => (
                       <FeaturedResourceCard
@@ -233,7 +247,11 @@ function App() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
                   >
-                    *insert very inspiring text here about Scholaro's mission and talk about joining the Scholaro team*
+                    In the UK, roughly 21% of students speak English as a second language. Scholaro UK works to break language barriers that hold these vibrant students back from unleashing their full academic potential.
+                    <br /><br />
+                    You can access FREE resources in the "Resources" section, to explore our simple GCSE revision guides.
+                    <br /><br />
+                     If you would like to support us, show us some love on youtube, and spread the word!
                   </motion.p>
                 </div>
               </motion.section>
@@ -241,6 +259,7 @@ function App() {
             </>
           } />
           <Route path="/free-resources" element={<FreeResources />} />
+          <Route path="/unavailable" element={<Unavailable />} />
           <Route path="/sixth-stop" element={<SixthStop />} />
           <Route path="/opportunities" element={<Opportunities />} />
           <Route path="/team" element={<Team />} />

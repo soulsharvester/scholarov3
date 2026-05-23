@@ -10,14 +10,16 @@ type FeaturedResourceCardProps = {
 };
 
 export default function FeaturedResourceCard({ title, description, image, author, link }: FeaturedResourceCardProps) {
-  return (
-    <Link
-      to={link}
-      className="group block rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-    >
+  const isPdfLink = link.toLowerCase().endsWith('.pdf');
+  const assetBase = import.meta.env.BASE_URL || '/';
+  const resolvedImage = image.startsWith('http') ? image : `${assetBase}${image.replace(/^\//, '')}`;
+  const resolvedLink = isPdfLink ? `${assetBase}${link.replace(/^\//, '')}` : link;
+
+  const cardContent = (
+    <>
       <div className="relative h-48 overflow-hidden">
         <img
-          src={image}
+          src={resolvedImage}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
@@ -32,6 +34,24 @@ export default function FeaturedResourceCard({ title, description, image, author
         <p className="text-gray-700 dark:text-gray-300 mb-2">{description}</p>
         <p className="text-sm text-gray-500 dark:text-gray-400">By {author}</p>
       </div>
+    </>
+  );
+
+  return isPdfLink ? (
+    <a
+      href={resolvedLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+    >
+      {cardContent}
+    </a>
+  ) : (
+    <Link
+      to={link}
+      className="group block rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+    >
+      {cardContent}
     </Link>
   );
 }

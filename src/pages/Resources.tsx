@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Search, Filter, Bookmark, ArrowLeft, BookOpen, User, GraduationCap } from 'lucide-react';
 import NavBar from '../components/NavBar';
 import { TEAM_MEMBER_NAMES } from '../components/TeamMember';
@@ -16,46 +17,46 @@ const SUBJECTS = ['English', 'Maths', 'Biology', 'Chemistry', 'Physics', 'Religi
 
 const TOPIC_PLACEHOLDERS: Record<string, Topic[]> = {
   'English Language': [
-    { name: 'Paper 1', pdf: '/englan1.pdf' },
-    { name: 'Paper 2', pdf: '/englan2.pdf' }, // Your specific file
+    { name: 'Paper 1', pdf: 'englan1.pdf' },
+    { name: 'Paper 2', pdf: 'englan2.pdf' }, // Your specific file
   ],
   'English Literature': [
-    { name: 'Shakespeare', pdf: '/temp.pdf' },
-    { name: '19th Century Novel', pdf: '/temp.pdf' },
-    { name: 'Poetry Anthology', pdf: '/temp.pdf' },
+    { name: 'Shakespeare', pdf: 'temp.pdf' },
+    { name: '19th Century Novel', pdf: 'temp.pdf' },
+    { name: 'Poetry Anthology', pdf: 'temp.pdf' },
   ],
   'Maths': [
-    { name: 'Numbers', pdf: '/math1.pdf' },
-    { name: 'Algebra', pdf: '/math2.pdf' },
-    { name: 'Geometry', pdf: '/math3.pdf' },
-    { name: 'Trigonometry', pdf: '/math4.pdf' },
-    { name: 'Probability', pdf: '/math5.pdf' },
+    { name: 'Numbers', pdf: 'math1.pdf' },
+    { name: 'Algebra', pdf: 'math2.pdf' },
+    { name: 'Geometry', pdf: 'math3.pdf' },
+    { name: 'Trigonometry', pdf: 'math4.pdf' },
+    { name: 'Probability', pdf: 'math5.pdf' },
   ],
   'Biology': [
-    { name: 'Cell Biology', pdf: '/biocel.pdf' },
-    { name: 'Organisation', pdf: '/bioorg.pdf' },
-    { name: 'Infection and Response', pdf: '/bioinf.pdf' },
-    { name: 'Bioenergetics', pdf: '/biobio.pdf' }, // Your specific file
-    { name: 'Homeostasis', pdf: '/temp.pdf' },
-    { name: 'Ecology', pdf: '/temp.pdf' },
+    { name: 'Cell Biology', pdf: 'biocel.pdf' },
+    { name: 'Organisation', pdf: 'bioorg.pdf' },
+    { name: 'Infection and Response', pdf: 'bioinf.pdf' },
+    { name: 'Bioenergetics', pdf: 'biobio.pdf' }, // Your specific file
+    { name: 'Homeostasis', pdf: 'temp.pdf' },
+    { name: 'Ecology', pdf: 'temp.pdf' },
   ],
   'Chemistry': [
-    { name: 'Atomic Structure', pdf: '/chem1.pdf' },
-    { name: 'Organic Chemistry', pdf: '/chem2.pdf' },
-    { name: 'Chemical Analysis', pdf: '/chem3.pdf' },
-    { name: 'Earths Resources', pdf: '/chem4.pdf' },
+    { name: 'Atomic Structure', pdf: 'chem1.pdf' },
+    { name: 'Organic Chemistry', pdf: 'chem2.pdf' },
+    { name: 'Chemical Analysis', pdf: 'chem3.pdf' },
+    { name: 'Earths Resources', pdf: 'chem4.pdf' },
   ],
   'Physics': [
-    { name: 'Energy', pdf: '/phys1.pdf' },
-    { name: 'Electricity', pdf: '/phys2.pdf' },
-    { name: 'Particle Model', pdf: '/phys3.pdf' },
-    { name: 'Forces', pdf: '/phys4.pdf' },
-    { name: 'Waves', pdf: '/phys5.pdf' },
-    { name: 'Magnetism and Electromagnetism', pdf: '/phys6.pdf' },
+    { name: 'Energy', pdf: 'phys1.pdf' },
+    { name: 'Electricity', pdf: 'phys2.pdf' },
+    { name: 'Particle Model', pdf: 'phys3.pdf' },
+    { name: 'Forces', pdf: 'phys4.pdf' },
+    { name: 'Waves', pdf: 'phys5.pdf' },
+    { name: 'Magnetism and Electromagnetism', pdf: 'phys6.pdf' },
   ],
   'Religious Studies': [
-    { name: 'Christianity', pdf: '/rs1.pdf' },
-    { name: 'Islam', pdf: '/rs2.pdf' },
+    { name: 'Christianity', pdf: 'rs1.pdf' },
+    { name: 'Islam', pdf: 'rs2.pdf' },
   ],
 };
 
@@ -74,6 +75,17 @@ export default function FreeResources() {
   // Navigation State
   const [view, setView] = useState<View>('LANDING');
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const subject = params.get('subject');
+
+    if (subject && Object.keys(TOPIC_PLACEHOLDERS).includes(subject)) {
+      setSelectedSubject(subject);
+      setView('TOPICS');
+    }
+  }, [location.search]);
 
   // Existing Logic for Bookmarks/Downloads
   const [bookmarkedResources, setBookmarkedResources] = useState<string[]>(() => {
@@ -179,7 +191,7 @@ export default function FreeResources() {
             
             {/* Standard HTML anchor tag styled as a button */}
             <a
-              href={topic.pdf}
+              href={`${import.meta.env.BASE_URL}${topic.pdf.replace(/^\//, '')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-cornflower-blue text-white rounded-md text-sm hover:bg-blue-600 transition-colors"

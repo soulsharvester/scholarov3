@@ -18,6 +18,11 @@ export const teamMembers: TeamMemberType[] = [
     description: 'Co-Founder and Maths Resource Creator',
   },
   {
+    name: 'Hamza',
+    img: '/hamza.jpg',
+    description: 'Lead Programmer and Biology Resource Creator',
+  },
+  {
     name: 'Elliot',
     img: '#',
     description: 'Programmer and Physics Resource Creator',
@@ -31,11 +36,6 @@ export const teamMembers: TeamMemberType[] = [
     name: 'Salahuddin',
     img: '#',
     description: 'Chemistry Resource Creator and Cameraman',
-  },
-  {
-    name: 'Hamza',
-    img: '/hamza.jpg',
-    description: 'Lead Programmer and Biology Resource Creator',
   },
   {
     name: 'Daniel',
@@ -89,8 +89,9 @@ export const teamMembers: TeamMemberType[] = [
 export const TEAM_MEMBER_NAMES = teamMembers.map(member => member.name);
 
 export function TeamMember({ name, img, description }: TeamMemberType) {
-  const PLACEHOLDER_IMG = '/placeholder-profile.png'; // Make sure this image exists in your public folder
-  const imageSrc = img && img !== '#' ? img : PLACEHOLDER_IMG;
+  const assetBase = import.meta.env.BASE_URL || '/';
+  const PLACEHOLDER_IMG = `${assetBase}placeholder-profile.png`;
+  const imageSrc = img && img !== '#' ? (img.startsWith('http') ? img : `${assetBase}${img.replace(/^\//, '')}`) : PLACEHOLDER_IMG;
   return (
     <div className="text-center">
       <img src={imageSrc} alt={name} className="mx-auto rounded-full w-24 h-24 mb-4 object-cover" />

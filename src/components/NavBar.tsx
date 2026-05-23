@@ -19,8 +19,6 @@ export default function NavBar() {
     localStorage.setItem('darkMode', isDarkMode.toString());
   }, [isDarkMode]);
 
-  // Replace these with your actual form links
-  const CONTACT_FORM_LINK = "https://forms.gle/your-contact-form-link";
   const JOIN_US_FORM_LINK = "https://forms.gle/your-join-us-form-link";
 
   const navLinks = [
@@ -43,7 +41,7 @@ export default function NavBar() {
             navigate('/');
           }
         }}>
-          <img src="/logo.png" alt="Scholaro Logo" className="w-10 h-10 object-contain" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Scholaro Logo" className="w-10 h-10 object-contain" />
           <span className={`font-bold text-2xl transition-colors duration-200 ${
             location.pathname === '/' ? 'text-cornflower-blue' : 'text-gray-800 dark:text-white'
           }`}>
@@ -67,15 +65,13 @@ export default function NavBar() {
               {link.label}
             </Link>
           ))}
-          {/* Contact link opens form in new tab */}
-          <a
-            href={CONTACT_FORM_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/unavailable?reason=contact"
             className="hover:text-cornflower-blue transition-colors duration-200 text-gray-800 dark:text-white"
+            onClick={() => setIsMenuOpen(false)}
           >
             Contact
-          </a>
+          </Link>
           {/* Join Us button */}
           <a
             href={"https://docs.google.com/forms/d/1aRJE0ZUiFJccNLBjBVKck3j0uqQrbSB_Fp0EfXrvbxk/viewform?edit_requested=true"}
@@ -158,15 +154,13 @@ export default function NavBar() {
               </Link>
             ))}
             {/* Contact link opens form in new tab */}
-            <a
-              href={CONTACT_FORM_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/unavailable?reason=contact"
               className="mb-4 text-lg hover:text-cornflower-blue transition-colors duration-200 text-gray-800 dark:text-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
-            </a>
+            </Link>
             {/* Join Us button */}
             <a
               href={"https://docs.google.com/forms/d/1aRJE0ZUiFJccNLBjBVKck3j0uqQrbSB_Fp0EfXrvbxk/viewform?edit_requested=true"}
